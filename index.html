@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Onam 2023</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background: linear-gradient(to bottom, #f5f6fa 0%, #dcdde1 100%);
+            color: #2f3640;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+        }
+        
+        .header-title {
+            font-family: 'Merienda', cursive;
+            font-size: 4rem;
+            color: #c23616;
+            text-shadow: 3px 3px 0px #ff9f43, 6px 6px 0px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .header-subtitle {
+            font-size: 1.5rem;
+            color: #40739e;
+            margin-bottom: 30px;
+        }
+        
+        .pookalam-container {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .pookalam-display {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            border: 8px solid #ff9f43;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .pookalam-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .pookalam-caption {
+            text-align: center;
+            color: #7f8fa6;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .onam-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .card {
+            flex: 0 0 calc(33.333% - 20px);
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-title {
+            font-family: 'Merienda', cursive;
+            color: #e84118;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .card-content {
+            line-height: 1.6;
+        }
+        
+        .festival-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .valla-sadya {
+            background: linear-gradient(to right, #c23616, #e84118);
+            padding: 40px;
+            border-radius: 15px;
+            color: white;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .sadya-title {
+            font-family: 'Merienda', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .sadya-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .sadya-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        
+        .boat-race {
+  position: relative;
+  height: 300px;
+  background: #40739e; /* sky */
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: #00a8ff;
+}
+
+/* Snake Boat Body */
+.boat {
+  position: absolute;
+  bottom: 80px;
+  left: -400px;
+  width: 350px;
+  height: 40px;
+  background: #5a381e; /* wood */
+  border-radius: 0 0 50% 50%;
+  animation: boatRace 20s linear infinite;
+}
+
+/* Snake Boat Tail (curved back) */
+.boat::before {
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: -30px;
+  width: 40px;
+  height: 120px;
+  background: #5a381e;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-12deg);
+}
+
+/* Pointed Front */
+.boat::after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: 0;
+  width: 50px;
+  height: 40px;
+  background: #5a381e;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+/* Boat animation across water */
+@keyframes boatRace {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 120%;
+  }
+}
+        
+        .message-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .form-title {
+            font-family: 'Merienda', cursive;
+            color: #40739e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-message {
+            background: #40739e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .submit-message:hover {
+            background: #273c75;
+        }
+        
+        .email-wish-btn {
+            background: #8c7ae6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px auto;
+        }
+        
+        .email-wish-btn:hover {
+            background: #7158e2;
+            transform: translateY(-3px);
+        }
+        
+        .email-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+        }
+        
+        .modal-title {
+            font-family: 'Merienda', cursive;
+            color: #40739e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #7f8fa6;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #7f8fa6;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes boatRace {
+            0% { left: -200px; }
+            100% { left: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .pookalam-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">Happy Onam 2025</h1>
+            <p class="header-subtitle">Celebrating the harvest festival of Kerala</p>
+            
+            <div class="pookalam-container">
+                <div class="pookalam-display">
+                    <!-- Pre-added Pookalam image from ImgBB -->
+                    <img class="pookalam-image" src="https://i.ibb.co/bgPt7vh7/IMG-20250904-WA0000.jpg" alt="Beautiful Pookalam">
+                </div>
+                <p class="pookalam-caption">Traditional Onam Pookalam (Floral Decoration)</p>
+            </div>
+        </header>
+        
+        <button class="email-wish-btn" id="email-wish-trigger">
+            <i class="fas fa-envelope"></i> Send Onam Wishes via Email
+        </button>
+        
+        <section class="onam-content">
+            <div class="card">
+                <h2 class="card-title">The Legend of Onam</h2>
+                <div class="card-content">
+                    <p>Onam is celebrated in honor of King Mahabali, a beloved ruler who it is believed visits his people during this festival. According to legend, Kerala witnessed its golden era during the reign of King Mahabali.</p>
+                    <img src="https://i.ibb.co/nqpnqcBM/IMG-20250904-WA0001.jpg" alt="King Mahabali" class="festival-image">
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Pookalam Art</h2>
+                <div class="card-content">
+                    <p>Pookalam is an intricate and colorful arrangement of flowers laid on the floor. Traditional designs are made in circles, representing the cyclical nature of life. The size of a Pookalam grows day by day during the Onam festival.</p>
+                    <img src="https://i.ibb.co/bgPt7vh7/IMG-20250904-WA0000.jpg" alt="Pookalam" class="festival-image">
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Onam Sadya</h2>
+                <div class="card-content">
+                    <p>The Onam Sadya is a grand vegetarian feast served on banana leaves. It consists of rice along with 20-25 different dishes, including sambar, avial, thoran, and the famous payasam dessert. The meal is typically followed by a banana and a betel leaf.</p>
+                    <img src="https://i.ibb.co/d0KGH2HR/IMG-20250904-WA0002.jpg" alt="Onam Sadya" class="festival-image">
+                </div>
+            </div>
+        </section>
+        
+        <section class="valla-sadya">
+            <h2 class="sadya-title">Traditional Onam Sadya Items</h2>
+            <div class="sadya-items">
+                <div class="sadya-item">Sambar</div>
+                <div class="sadya-item">Avial</div>
+                <div class="sadya-item">Thoran</div>
+                <div class="sadya-item">Olan</div>
+                <div class="sadya-item">Pachadi</div>
+                <div class="sadya-item">Kichadi</div>
+                <div class="sadya-item">Parippu Curry</div>
+                <div class="sadya-item">Payasam</div>
+                <div class="sadya-item">Pulissery</div>
+                <div class="sadya-item">Banana Chips</div>
+            </div>
+        </section>
+        
+        <section class="boat-race">
+            <div class="water"></div>
+            <div class="boat"></div>
+        </section>
+        
+        <section class="message-form">
+            <h2 class="form-title">Share Onam Greetings</h2>
+            <form id="wish-form">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input form-textarea" placeholder="Your Onam Message" required>Wishing you a joyful Onam filled with prosperity and happiness!</textarea>
+                </div>
+                <button type="submit" class="submit-message">Share Greeting</button>
+            </form>
+        </section>
+        
+        <footer>
+            <p>Wishing you a joyful and prosperous Onam! 🎉</p>
+            <p>© 2023 Onam Celebrations</p>
+        </footer>
+    </div>
+
+    <!-- Email Modal -->
+    <div class="email-modal" id="email-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2 class="modal-title">Send Onam Wishes via Email</h2>
+            <form id="email-form">
+                <div class="form-group">
+                    <input type="email" class="form-input" id="recipient-email" placeholder="Recipient's Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" id="sender-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input form-textarea" id="email-message" placeholder="Your Onam Wish Message" required>Wishing you and your family a very Happy Onam! May this festival bring joy, prosperity, and happiness to your life.</textarea>
+                </div>
+                <button type="submit" class="submit-message">
+                    <i class="fas fa-paper-plane"></i> Open in Email App
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailWishTrigger = document.getElementById('email-wish-trigger');
+            const emailModal = document.getElementById('email-modal');
+            const closeModal = document.getElementById('close-modal');
+            const emailForm = document.getElementById('email-form');
+            
+            // Handle form submission
+            document.getElementById('wish-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your Onam wishes! 🙏');
+                this.reset();
+            });
+            
+            // Open email modal
+            emailWishTrigger.addEventListener('click', function() {
+                emailModal.style.display = 'flex';
+            });
+            
+            // Close email modal
+            closeModal.addEventListener('click', function() {
+                emailModal.style.display = 'none';
+            });
+            
+            // Handle email form submission
+            emailForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const recipient = document.getElementById('recipient-email').value;
+                const sender = document.getElementById('sender-name').value;
+                const message = document.getElementById('email-message').value;
+                
+                const subject = `Happy Onam Wishes from ${sender}`;
+                const body = `${message}%0D%0A%0D%0AWishing you a joyful Onam!
+                Generated via: https://lnk.ink/onam2`;
+                
+                // Open default mail client
+                window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+                
+                // Close modal after a short delay
+                setTimeout(function() {
+                    emailModal.style.display = 'none';
+                    emailForm.reset();
+                }, 500);
+            });
+            
+            // Close modal if clicked outside content
+            window.addEventListener('click', function(e) {
+                if (e.target === emailModal) {
+                    emailModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
